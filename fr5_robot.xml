@@ -64,7 +64,7 @@
                   <joint name="j6" type="hinge" axis="0 0 1" range="-3.0543261 3.0543261"/>
                   <geom name="wrist3_Link_geom" type="mesh" mesh="wrist3_Link_mesh" rgba="0.898 0.918 0.929 1"/>
                   <!-- arm_hand_joint: fixed wrist3_Link -> hand_base_link -->
-                  
+                  <site name="attachment_site" pos="0 0 0.102" size="0.01" rgba="1 0 0 1"/>
                 </body>
               </body>
             </body>
