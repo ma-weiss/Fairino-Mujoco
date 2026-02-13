@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- MuJoCo MJCF converted from fr5_withgripper.urdf
-     Validate: python -c "import mujoco; mujoco.MjModel.from_xml_path('fr5_withgripper.xml')"
+<!-- MuJoCo MJCF converted from fr5_robot.urdf
+     Validate: python -c "import mujoco; mujoco.MjModel.from_xml_path('fr5_robot.xml')"
      Run from this file's directory so meshes/ resolves. -->
-<mujoco model="fr5_withgripper">
+<mujoco model="fr5_robot">
   <compiler angle="radian" meshdir="meshes"/>
 
   <option gravity="0 0 -9.81"/>
