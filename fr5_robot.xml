@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MuJoCo MJCF converted from fr5_withgripper.urdf
+     Validate: python -c "import mujoco; mujoco.MjModel.from_xml_path('fr5_withgripper.xml')"
+     Run from this file's directory so meshes/ resolves. -->
+<mujoco model="fr5_withgripper">
+  <compiler angle="radian" meshdir="meshes"/>
+
+  <option gravity="0 0 -9.81"/>
+
+  <default>
+    <joint damping="0"/>
+  </default>
+
+  <asset>
+    <mesh name="base_link_mesh" file="base_link.STL"/>
+    <mesh name="shoulder_Link_mesh" file="shoulder_link.STL"/>
+    <mesh name="upperarm_Link_mesh" file="upperarm_link.STL"/>
+    <mesh name="forearm_Link_mesh" file="forearm_link.STL"/>
+    <mesh name="wrist1_Link_mesh" file="wrist1_link.STL"/>
+    <mesh name="wrist2_Link_mesh" file="wrist2_link.STL"/>
+    <mesh name="wrist3_Link_mesh" file="wrist3_link.STL"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_link" pos="0 0 0">
+      <inertial pos="-0.00044457 0.0004811 0.032592" mass="1.073"
+               fullinertia="0.0024567 0.0024575 0.0038879 -1.5435E-05 -1.3507E-05 1.4421E-05"/>
+      <geom name="base_link_geom" type="mesh" mesh="base_link_mesh" rgba="0.898 0.918 0.929 1"/>
+      <!-- j1: revolute base_link -> shoulder_Link -->
+      <body name="shoulder_Link" pos="0 0 0" euler="0 0 0">
+        <inertial pos="1.3785E-06 -0.0031495 0.14526" mass="4.1676"
+                 fullinertia="0.010397 0.010278 0.0076307 -1.005E-08 1.6274E-07 0.00015856"/>
+        <joint name="j1" type="hinge" axis="0 0 1" range="-3.0543261 3.0543261"/>
+        <geom name="shoulder_Link_geom" type="mesh" mesh="shoulder_Link_mesh" rgba="0.898 0.918 0.929 1" euler="-1.570796 1.570796 0" pos="0 0 0.09"/>
+        <!-- j2: revolute shoulder_Link -> upperarm_Link -->
+        <body name="upperarm_Link" pos="0 0 0.155" euler="1.570796 -1.570796 0">
+          <inertial pos="-2.2928E-05 0.33278 0.084237" mass="20.782"
+                   fullinertia="2.9074 0.12653 2.8157 -0.00023104 -2.5049E-05 -0.1479"/>
+          <joint name="j2" type="hinge" axis="0 0 1" range="-4.6251225 1.4835298"/>
+          <geom name="upperarm_Link_geom" type="mesh" mesh="upperarm_Link_mesh" rgba="0.898 0.918 0.929 1"/>
+          <!-- j3: revolute upperarm_Link -> forearm_Link -->
+          <body name="forearm_Link" pos="0 0.425 0" euler="0 0 -1.570796">
+            <inertial pos="0.092224 -2.2928E-05 0.084237" mass="20.782"
+                     fullinertia="0.12653 2.9074 2.8157 0.00023104 0.1479 -2.5049E-05"/>
+            <joint name="j3" type="hinge" axis="0 0 1" range="-2.8274333 2.8274333"/>
+            <geom name="forearm_Link_geom" type="mesh" mesh="forearm_Link_mesh" rgba="0.898 0.918 0.929 1"/>
+            <!-- j4: revolute forearm_Link -> wrist1_Link -->
+            <body name="wrist1_Link" pos="-0.395 0 0" euler="0 0 1.570796">
+              <inertial pos="0.48722 -2.2928E-05 0.084237" mass="20.782"
+                       fullinertia="0.12653 2.9074 2.8157 0.00023104 0.1479 -2.5049E-05"/>
+              <joint name="j4" type="hinge" axis="0 0 1" range="-4.6251225 1.4835298"/>
+              <geom name="wrist1_Link_geom" type="mesh" mesh="wrist1_Link_mesh" rgba="0.898 0.918 0.929 1" euler="0 0 1.570796"/>
+              <!-- j5: revolute wrist1_Link -> wrist2_Link -->
+              <body name="wrist2_Link" pos="0 0 0.13" euler="1.570796 0 -1.570796">
+                <!-- URDF had mass=1.570796 (pi/2); using 0.5 kg as plausible value -->
+                <inertial pos="-2.396E-06 0.0045906 0.099342" mass="0.5"
+                         fullinertia="0.0022393 0.0013914 0.0021864 -1.0022E-07 -3.2115E-08 -2.2223E-05"/>
+                <joint name="j5" type="hinge" axis="0 0 1" range="-3.0543261 3.0543261"/>
+                <geom name="wrist2_Link_geom" type="mesh" mesh="wrist2_Link_mesh" rgba="0.898 0.918 0.929 1"  euler="0 0 1.570796"/>
+                <!-- j6: revolute wrist2_Link -> wrist3_Link -->
+                <body name="wrist3_Link" pos="0 0 0.102" euler="-1.570796 1.570796 0">
+                  <inertial pos="5.8427E-06 7.5807E-05 0.079126" mass="0.52527"
+                           fullinertia="0.00027801 0.00027736 0.00041582 -3.5346E-07 -1.7431E-07 -7.5888E-08"/>
+                  <joint name="j6" type="hinge" axis="0 0 1" range="-3.0543261 3.0543261"/>
+                  <geom name="wrist3_Link_geom" type="mesh" mesh="wrist3_Link_mesh" rgba="0.898 0.918 0.929 1"/>
+                  <!-- arm_hand_joint: fixed wrist3_Link -> hand_base_link -->
+                  
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="actuator_j1" joint="j1" ctrllimited="true" ctrlrange="-3.0543261 3.0543261"/>
+    <motor name="actuator_j2" joint="j2" ctrllimited="true" ctrlrange="-4.6251225 1.4835298"/>
+    <motor name="actuator_j3" joint="j3" ctrllimited="true" ctrlrange="-2.8274333 2.8274333"/>
+    <motor name="actuator_j4" joint="j4" ctrllimited="true" ctrlrange="-4.6251225 1.4835298"/>
+    <motor name="actuator_j5" joint="j5" ctrllimited="true" ctrlrange="-3.0543261 3.0543261"/>
+    <motor name="actuator_j6" joint="j6" ctrllimited="true" ctrlrange="-3.0543261 3.0543261"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 0 0 -1.57079 0 -0.7853" ctrl="0 0 0 0 0 0"/>
+  </keyframe>
+</mujoco>
