@@ -17,7 +17,7 @@
       </default>
   </default>
 
-  <!-- <asset>
+  <asset>
     <mesh name="base_link_mesh" file="base_link.STL"/>
     <mesh name="shoulder_link_mesh" file="shoulder_link.STL"/>
     <mesh name="upperarm_link_mesh" file="upperarm_link.STL"/>
@@ -25,15 +25,6 @@
     <mesh name="wrist1_link_mesh" file="wrist1_link.STL"/>
     <mesh name="wrist2_link_mesh" file="wrist2_link.STL"/>
     <mesh name="wrist3_link_mesh" file="wrist3_link.STL"/>
-  </asset> -->
-  <asset>
-    <mesh name="base_link_mesh" file="base_link.STL"/>
-    <mesh name="shoulder_link_mesh" file="j1_Link.STL"/>
-    <mesh name="upperarm_link_mesh" file="j2_Link.STL"/>
-    <mesh name="forearm_link_mesh" file="j3_Link.STL"/>
-    <mesh name="wrist1_link_mesh" file="j4_Link.STL"/>
-    <mesh name="wrist2_link_mesh" file="j5_Link.STL"/>
-    <mesh name="wrist3_link_mesh" file="j6_Link.STL"/>
   </asset>
 
   <worldbody>
