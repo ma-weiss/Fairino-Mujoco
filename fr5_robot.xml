@@ -44,38 +44,38 @@
       <geom class="collision" type="cylinder" size="0.058 0.033" pos="0 0 0.035" />
       <!-- shoulder_pan: revolute base_link -> shoulder_Link -->
       <body name="shoulder_link" pos="0 0 0" euler="0 0 0">
-        <inertial pos="1.3785E-06 -0.0031495 0.14526" mass="4.1676"
+        <inertial pos="1.3785E-06 -0.0031495 0.14526" mass="4.64"
                  fullinertia="0.010397 0.010278 0.0076307 -1.005E-08 1.6274E-07 0.00015856"/>
         <joint name="shoulder_pan" type="hinge" axis="0 0 1" range="-3.0543261 3.0543261"/>
         <geom type="mesh" name="shoulder_link_geom" mesh="shoulder_link_mesh" rgba="0.898 0.918 0.929 1" />
         <!-- <geom class="collision" type="cylinder" size="0.06 0.115" pos="0 0 0.22" /> -->
         <!-- shoulder_lift: revolute shoulder_link -> upperarm_link -->
         <body name="upperarm_link" pos="0 0 0.155" euler="1.570796 0 0">
-          <inertial pos="-2.2928E-05 0.33278 0.084237" mass="14.458"
+          <inertial pos="-2.2928E-05 0.33278 0.084237" mass="10.08"
                    fullinertia="2.9074 0.12653 2.8157 -0.00023104 -2.5049E-05 -0.1479"/>
           <joint name="shoulder_lift" type="hinge" axis="0 0 1" range="-4.6251225 1.4835298"/>
           <geom name="upperarm_link_geom" type="mesh" mesh="upperarm_link_mesh" rgba="0.898 0.918 0.929 1"/>
           <!-- elbow: revolute upperarm_link -> forearm_link -->
           <body name="forearm_link" pos="-0.425 0 0" euler="0 0 0">
-            <inertial pos="0.092224 -2.2928E-05 0.084237" mass="7.6737"
+            <inertial pos="0.092224 -2.2928E-05 0.084237" mass="2.71"
                      fullinertia="0.12653 2.9074 2.8157 0.00023104 0.1479 -2.5049E-05"/>
             <joint name="elbow" type="hinge" axis="0 0 1" range="-2.8274333 2.8274333"/>
             <geom name="forearm_link_geom" type="mesh" mesh="forearm_link_mesh" rgba="0.898 0.918 0.929 1"/>
             <!-- wrist_1: revolute forearm_link -> wrist1_link -->
             <body name="wrist1_link" pos="-0.395 0 0" euler="0 0 0">
-              <inertial pos="0.48722 -2.2928E-05 0.084237" mass="1.6266"
+              <inertial pos="0.48722 -2.2928E-05 0.084237" mass="1.56"
                        fullinertia="0.12653 2.9074 2.8157 0.00023104 0.1479 -2.5049E-05"/>
               <joint name="wrist_1" type="hinge" axis="0 0 1" range="-4.6251225 1.4835298"/>
               <geom name="wrist1_link_geom" type="mesh" mesh="wrist1_link_mesh" rgba="0.898 0.918 0.929 1"/>
               <!-- wrist_2: revolute wrist1_link -> wrist2_link -->
               <body name="wrist2_link" pos="0 0 0.1021" euler="1.570796 0 0">
-                <inertial pos="-2.396E-06 0.0045906 0.099342" mass="1.5812"
+                <inertial pos="-2.396E-06 0.0045906 0.099342" mass="1.56"
                          fullinertia="0.0022393 0.0013914 0.0021864 -1.0022E-07 -3.2115E-08 -2.2223E-05"/>
                 <joint name="wrist_2" type="hinge" axis="0 0 1" range="-3.0543261 3.0543261"/>
                 <geom name="wrist2_link_geom" type="mesh" mesh="wrist2_link_mesh" rgba="0.898 0.918 0.929 1"  />
                 <!-- wrist_3: revolute wrist2_link -> wrist3_link -->
                 <body name="wrist3_link" pos="0 0 0.102" euler="-1.5708 0 0">
-                  <inertial pos="5.8427E-06 7.5807E-05 0.079126" mass="0.52527"
+                  <inertial pos="5.8427E-06 7.5807E-05 0.079126" mass="0.36"
                            fullinertia="0.00027801 0.00027736 0.00041582 -3.5346E-07 -1.7431E-07 -7.5888E-08"/>
                   <joint name="wrist_3" type="hinge" axis="0 0 1" range="-3.0543261 3.0543261"/>
                   <geom name="wrist3_link_geom" type="mesh" mesh="wrist3_link_mesh" rgba="0.898 0.918 0.929 1"/>
