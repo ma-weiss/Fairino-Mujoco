@@ -91,7 +91,7 @@
                   <!-- arm_gripper_joint: fixed wrist3_link -> gripper_base_link -->
                   <site name="attachment_site" pos="0 0 0.107" euler="0 0 -0.698132" size="0.01" rgba="1 0 0 1"/>
                   <body name="gripper_mount" pos="0 0 0.123" euler="0 0 0">
-                    <attach model="gripper_model" body="gripper_base_link" prefix="h1_"/>
+                    <attach model="gripper_model" body="gripper_base_link" prefix=""/>
                   </body>
                 </body>
               </body>
