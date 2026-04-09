@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter!
+     Originally created by Stephen Brawner (brawner@gmail.com)
      Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
@@ -458,7 +459,7 @@
       k_position="0"
       k_velocity="0" />
   </joint>
-    <!-- 工具连接点 -->
+    <!-- Tool Attachment Point -->
   <joint
     name="tool"
     type="fixed">
