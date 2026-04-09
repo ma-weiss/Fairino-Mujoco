@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- Gripper: PGI-140-80-W -->
-<!-- Datasheet: https://www.dh-robotics.com/wp-content/uploads/2022/01/PGI-Series.pdf-->
+<!-- Datasheet: https://www.dh-robotics.com/wp-content/uploads/2022/01/PGI-Series.pdf -->
 
 <mujoco model="gripper_pgi">
   <compiler angle="radian" meshdir="./meshes"/>
@@ -34,7 +34,7 @@
       <body name="finger_link1" pos="0.04 -0.005 0.0003" euler="1.5708 0 0">
         <inertial pos="-0.076592 0.078552 0.0048556" mass="0.058954" fullinertia="2.37128E-05 1.98369E-05 3.37272E-05 4.94815E-06 -3.83269E-06 4.62772E-06"/>
 
-        <joint name="fj1" type="slide" axis="1 0 0" range="0 0.04" damping="0.1"/>
+        <joint name="fj1" type="slide" axis="1 0 0" range="0 0.04" damping="12.0" armature="0.1" frictionloss="0.1"/>
 
         <geom class="visual" name="finger1_visual" mesh="finger_link1_mesh" material="black"/>
         <geom class="collision" name="finger1_base_collision" type="box" size="0.0348 0.008 0.0073" pos="-0.06725 0.069 0.014"/>
@@ -44,12 +44,14 @@
       <body name="finger_link2" pos="-0.037 0.0037 0.0003" euler="-1.5708 0 3.1416">
         <inertial pos="-0.076592 0.080052 0.0048556" mass="0.058954" fullinertia="2.37128E-05 1.98369E-05 3.37272E-05 4.94815E-06 -3.83269E-06 4.62772E-06"/>
 
-        <joint name="fj2" type="slide" axis="1 0 0" range="0 0.04" damping="0.1"/>
+        <joint name="fj2" type="slide" axis="1 0 0" range="0 0.04" damping="12.0" armature="0.1" frictionloss="0.1"/>
 
         <geom class="visual" name="finger2_visual" mesh="finger_link2_mesh" material="black"/>
         <geom class="collision" name="finger2_base_collision" type="box" size="0.0348 0.008 0.0073" pos="-0.06725 0.069 0.014"/>
         <geom class="collision" name="finger2_collision" type="box" size="0.0118 0.0351 0.01025" pos="-0.0903 0.09683 -0.0043"/>
       </body>
+
+      <site name="tool_center_point" pos="0.0015 0 0.118" size="0.005" rgba="1 0 0 0.5"/>
 
     </body>
   </worldbody>
